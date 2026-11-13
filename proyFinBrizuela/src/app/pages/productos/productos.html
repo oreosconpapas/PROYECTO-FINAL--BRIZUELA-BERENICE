@@ -1,0 +1,36 @@
+<div class="container my-5">
+  <div class="text-center mb-5">
+    <h2 class="fw-bold text-success">Listado de Especies</h2>
+    <p class="text-secondary">Conocé la clasificación de los animales en nuestro planeta.</p>
+  </div>
+
+  <!-- Tarjeta de detalle grande que aparece arriba cuando se selecciona un animal -->
+  @if (animalSeleccionado) {
+    <div class="card shadow-lg border-success mb-5 p-4 bg-light rounded-4 animate__animated animate__fadeIn">
+      <div class="row align-items-center">
+        <div class="col-md-4">
+          <img [src]="animalSeleccionado.imagen" class="img-fluid rounded-3 shadow" [alt]="animalSeleccionado.nombre">
+        </div>
+        <div class="col-md-8">
+          <span class="badge bg-success mb-2">{{ animalSeleccionado.especie }}</span>
+          <h3 class="fw-bold text-dark">{{ animalSeleccionado.nombre }}</h3>
+          <p class="text-secondary fs-5">{{ animalSeleccionado.descripcion }}</p>
+          <button class="btn btn-outline-danger btn-sm" (click)="cerrarDetalle()">✖ Cerrar detalle</button>
+        </div>
+      </div>
+    </div>
+  }
+
+  <!-- Grilla de productos con @for y @if -->
+  @if (animales.length > 0) {
+    <div class="row g-4">
+      @for (p of animales; track p.id) {
+        <div class="col-md-4">
+          <app-producto-card [animal]="p" (verDetalle)="seleccionarAnimal($event)"></app-producto-card>
+        </div>
+      }
+    </div>
+  } @else {
+    <p class="text-center text-muted fs-5">No hay productos disponibles por el momento.</p>
+  }
+</div>

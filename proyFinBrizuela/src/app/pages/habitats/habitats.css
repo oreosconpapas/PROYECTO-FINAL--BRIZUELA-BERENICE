@@ -1,0 +1,126 @@
+
+.habitats-page {
+  background-color: #f5f7f1;
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+
+/* Encabezado */
+.habitats-header {
+  padding: 35px 15px;
+}
+
+.section-label {
+  color: #63845b;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.habitats-header h2 {
+  color: #294b35;
+  font-size: 36px;
+}
+
+.habitats-header p {
+  color: #6b786d;
+  max-width: 650px;
+  margin: 15px auto 0;
+  line-height: 1.7;
+}
+
+/* Tarjetas */
+.habitat-card {
+  border: none;
+  border-radius: 18px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 4px 15px rgba(40, 70, 45, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.habitat-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 10px 25px rgba(40, 70, 45, 0.15);
+}
+
+.habitat-image {
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.habitat-card .card-body {
+  padding: 22px;
+}
+
+.habitat-card .card-title {
+  color: #294b35;
+  font-size: 21px;
+}
+
+.habitat-card .card-text {
+  color: #718075;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Botón */
+.btn-habitat {
+  background-color: #527b52;
+  color: white;
+  border-radius: 25px;
+  padding: 10px 18px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-habitat:hover {
+  background-color: #365b3b;
+  color: white;
+}
+
+/* Detalle del hábitat */
+.habitat-detail {
+  border: none;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0 5px 20px rgba(40, 70, 45, 0.10);
+}
+
+.detail-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.habitat-detail h3 {
+  color: #294b35;
+}
+
+.detail-description {
+  color: #6b786d;
+  line-height: 1.8;
+}
+
+.animal-tag {
+  background-color: #e7efe3;
+  color: #365b3b;
+  padding: 8px 13px;
+  border-radius: 20px;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.btn-close-detail {
+  border: 1px solid #b65b52;
+  color: #b65b52;
+  border-radius: 20px;
+  padding: 8px 18px;
+}
+
+.btn-close-detail:hover {
+  background-color: #b65b52;
+  color: white;
+}

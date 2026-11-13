@@ -1,0 +1,92 @@
+
+<div class="habitats-page">
+  <div class="container py-5">
+
+    <div class="habitats-header text-center mb-5">
+      <span class="section-label">ANIMALIA · MUNDO NATURAL</span>
+      <h2 class="fw-bold mt-3">Explorá los hábitats naturales</h2>
+      <p>
+        Descubrí los diferentes ambientes donde viven los animales
+        y conocé las características de cada ecosistema.
+      </p>
+    </div>
+
+    @if (habitatSeleccionado) {
+      <div class="card habitat-detail mb-5 p-4">
+        <div class="row align-items-center g-4">
+          <div class="col-md-5">
+            <img
+              [src]="habitatSeleccionado.imagen"
+              class="img-fluid detail-image"
+              [alt]="habitatSeleccionado.nombre">
+          </div>
+
+          <div class="col-md-7">
+            <span class="section-label">HÁBITAT SELECCIONADO</span>
+            <h3 class="fw-bold mt-2">
+              {{ habitatSeleccionado.nombre }}
+            </h3>
+
+            <p class="detail-description">
+              {{ habitatSeleccionado.descripcion }}
+            </p>
+
+            <h5 class="fw-bold mt-4">Animales que viven aquí</h5>
+
+            <ul class="list-inline mb-4">
+              @for (animal of habitatSeleccionado.animalesTipicos; track animal) {
+                <li class="list-inline-item animal-tag">
+                  {{ animal }}
+                </li>
+              }
+            </ul>
+
+            <button
+              class="btn btn-close-detail"
+              (click)="cerrarDetalle()">
+              Cerrar detalle
+            </button>
+          </div>
+        </div>
+      </div>
+    }
+
+    @if (habitatsList.length > 0) {
+      <div class="row g-4">
+
+        @for (h of habitatsList; track h.id) {
+          <div class="col-md-6 col-lg-4">
+            <div class="card habitat-card h-100">
+
+              <img
+                [src]="h.imagen"
+                class="card-img-top habitat-image"
+                [alt]="h.nombre">
+
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title fw-bold">{{ h.nombre }}</h5>
+
+                <p class="card-text">
+                  {{ h.descripcion }}
+                </p>
+
+                <button
+                  class="btn btn-habitat mt-auto"
+                  (click)="seleccionarHabitat(h)">
+                  Ver características
+                </button>
+              </div>
+
+            </div>
+          </div>
+        }
+
+      </div>
+    } @else {
+      <p class="text-center text-muted fs-5">
+        No hay hábitats disponibles por el momento.
+      </p>
+    }
+
+  </div>
+</div>

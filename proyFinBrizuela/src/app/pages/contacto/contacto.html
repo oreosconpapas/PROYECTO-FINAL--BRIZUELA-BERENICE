@@ -1,0 +1,77 @@
+<div class="container my-5">
+  <!-- Encabezado de la página -->
+  <div class="text-center mb-5">
+    <h2 class="fw-bold text-success">Contacto</h2>
+    <p class="text-secondary">¿Tenés alguna duda, sugerencia o querés saber más sobre Animalia? Escribinos.</p>
+  </div>
+
+  <div class="row g-5 justify-content-center">
+    
+    <!-- Columna de Información de Contacto -->
+    <div class="col-lg-5">
+      <div class="p-4 bg-light rounded-4 shadow-sm border-success border-opacity-25 border h-100">
+        <h4 class="fw-bold text-dark mb-4">Información de contacto</h4>
+        
+        <div class="d-flex align-items-start mb-3">
+          <span class="fs-4 me-3">📍</span>
+          <div>
+            <h6 class="fw-bold mb-1 text-dark">Ubicación</h6>
+            <p class="text-secondary small mb-0">Cipolletti, Río Negro, Argentina</p>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-start mb-3">
+          <span class="fs-4 me-3">✉️</span>
+          <div>
+            <h6 class="fw-bold mb-1 text-dark">Correo electrónico</h6>
+            <p class="text-secondary small mb-0">info@animalia.com</p>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-start">
+          <span class="fs-4 me-3">📞</span>
+          <div>
+            <h6 class="fw-bold mb-1 text-dark">Teléfono</h6>
+            <p class="text-secondary small mb-0">+54 299 676-767</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna del Formulario -->
+    <div class="col-lg-7">
+      <div class="card shadow-sm border-0 p-4 rounded-4 bg-white">
+        
+        <!-- Alerta de éxito cuando se envía el formulario -->
+        @if (mensajeEnviado) {
+          <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+            <strong>¡Mensaje enviado con éxito!</strong> Gracias por contactarte con Animalia. Te responderemos pronto.
+          </div>
+        }
+
+        <form (submit)="enviarFormulario($event)">
+          <div class="mb-3">
+            <label for="nombre" class="form-label fw-medium text-dark">Nombre y Apellido</label>
+            <input type="text" class="form-control bg-light" id="nombre" placeholder="Ej: Juan Pérez" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label fw-medium text-dark">Correo electrónico</label>
+            <input type="email" class="form-control bg-light" id="email" placeholder="nombre@ejemplo.com" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="mensaje" class="form-label fw-medium text-dark">Mensaje</label>
+            <textarea class="form-control bg-light" id="mensaje" rows="4" placeholder="Escribí tu mensaje aquí..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-success w-100 py-2 fw-medium">
+            Enviar mensaje
+          </button>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+</div>
